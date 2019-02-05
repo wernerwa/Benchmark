@@ -295,8 +295,8 @@ class Benchmark_Timer extends PEAR
         }
 
         foreach ($result as $k => $v) {
-            $perc  = (($v['diff'] * 100) / $total);
-            $tperc = (($v['total'] * 100) / $total);
+            $perc  = (((float) $v['diff'] * 100) / $total);
+            $tperc = (((float) $v['total'] * 100) / $total);
 
             $percentage = number_format($perc, 2, '.', '')."%";
 
