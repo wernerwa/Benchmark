@@ -23,8 +23,6 @@
  * @link      http://pear.php.net/package/Benchmark
  */
 
-require_once 'PEAR.php';
-
 /**
  * Provides timing and profiling information.
  *
@@ -32,7 +30,7 @@ require_once 'PEAR.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Profiler.php';
+ * require_once 'vendor/autoload.php';
  *
  * $profiler = new Benchmark_Profiler(true);
  *
@@ -54,7 +52,7 @@ require_once 'PEAR.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Profiler.php';
+ * require_once 'vendor/autoload.php';
  *
  * $profiler = new Benchmark_Profiler();
  *

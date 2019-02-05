@@ -22,7 +22,6 @@
  * @version   CVS: $Id$
  * @link      http://pear.php.net/package/Benchmark
  */
-require_once 'PEAR.php';
 
 /**
  * Provides timing and profiling information.
@@ -31,7 +30,7 @@ require_once 'PEAR.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Timer.php';
+ * require_once 'vendor/autoload.php';
  *
  * $timer = new Benchmark_Timer(TRUE);
  * $timer->setMarker('Marker 1');
@@ -42,7 +41,7 @@ require_once 'PEAR.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Timer.php';
+ * require_once 'vendor/autoload.php';
  *
  * $timer = new Benchmark_Timer();
  * $timer->start();

@@ -23,7 +23,7 @@
  * @link      http://pear.php.net/package/Benchmark
  */
 
-require 'Benchmark/Timer.php';
+require dirname(__DIR__).'/vendor/autoload.php';
 
 /**
  * Wait

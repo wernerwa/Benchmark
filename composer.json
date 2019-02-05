@@ -7,9 +7,9 @@
         }
     ],
     "autoload": {
-        "classmap": [
-            "./"
-        ]
+        "psr-0": {
+            "Benchmark": "./"
+        }
     },
     "description": "More info available on: http://pear.php.net/package/Benchmark",
     "license": "New BSD",
@@ -23,7 +23,8 @@
         "ext-bcmath": "May require the bcmath PHP extension"
     },
     "require": {
-        "pear/pear_exception": "*"
+        "pear/pear_exception": "*",
+        "pear/pear-core-minimal": "^1.10"
     },
     "require-dev": {
         "phpunit/phpunit": "*"

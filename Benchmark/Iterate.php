@@ -23,8 +23,6 @@
  * @link      http://pear.php.net/package/Benchmark
  */
 
-require_once 'Benchmark/Timer.php';
-
 /**
  * Provides timing and profiling information.
  *
@@ -32,7 +30,7 @@ require_once 'Benchmark/Timer.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Iterate.php';
+ * require_once 'vendor/autoload.php';
  *
  * $benchmark = new Benchmark_Iterate;
  *
@@ -49,7 +47,7 @@ require_once 'Benchmark/Timer.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Iterate.php';
+ * require_once 'vendor/autoload.php';
  *
  * $benchmark = new Benchmark_Iterate;
  *
@@ -68,7 +66,7 @@ require_once 'Benchmark/Timer.php';
  *
  * <code>
  * <?php
- * require_once 'Benchmark/Iterate.php';
+ * require_once 'vendor/autoload.php';
  *
  * $benchmark = new Benchmark_Iterate;
  *
