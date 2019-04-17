@@ -1,18 +1,18 @@
 <?php
 /**
- * Timer.php                                                      
+ * Timer.php
  *
  * PHP version 4
  *
- * Copyright (c) 2001-2006 Sebastian Bergmann <sb@sebastian-bergmann.de>. 
- * 
- * This source file is subject to the New BSD license, That is bundled    
- * with this package in the file LICENSE, and is available through        
- * the world-wide-web at                                                  
- * http://www.opensource.org/licenses/bsd-license.php                     
- * If you did not receive a copy of the new BSDlicense and are unable     
- * to obtain it through the world-wide-web, please send a note to         
- * license@php.net so we can mail you a copy immediately.                 
+ * Copyright (c) 2001-2006 Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ *
+ * This source file is subject to the New BSD license, That is bundled
+ * with this package in the file LICENSE, and is available through
+ * the world-wide-web at
+ * http://www.opensource.org/licenses/bsd-license.php
+ * If you did not receive a copy of the new BSDlicense and are unable
+ * to obtain it through the world-wide-web, please send a note to
+ * license@php.net so we can mail you a copy immediately.
  *
  * @category  Benchmarking
  * @package   Benchmark
@@ -95,7 +95,7 @@ class Benchmark_Timer extends PEAR
      *
      * @access public
      */
-    function Benchmark_Timer($auto = false) 
+    function Benchmark_Timer($auto = false)
     {
         $this->auto = $auto;
 
@@ -112,7 +112,7 @@ class Benchmark_Timer extends PEAR
      * @access public
      * @return void
      */
-    function close() 
+    function close()
     {
         if ($this->auto) {
             $this->stop();
@@ -127,7 +127,7 @@ class Benchmark_Timer extends PEAR
      * @access public
      * @return void
      */
-    function start() 
+    function start()
     {
         $this->setMarker('Start');
     }
@@ -139,7 +139,7 @@ class Benchmark_Timer extends PEAR
      * @access public
      * @return void
      */
-    function stop() 
+    function stop()
     {
         $this->setMarker('Stop');
     }
@@ -153,7 +153,7 @@ class Benchmark_Timer extends PEAR
      * @access public
      * @return void
      */
-    function setMarker($name) 
+    function setMarker($name)
     {
         $this->markers[$name] = $this->_getMicrotime();
     }
@@ -167,7 +167,7 @@ class Benchmark_Timer extends PEAR
      * @return double  $time_elapsed time elapsed between $start and $end
      * @access public
      */
-    function timeElapsed($start = 'Start', $end = 'Stop') 
+    function timeElapsed($start = 'Start', $end = 'Stop')
     {
         if ($end == 'Stop' && !isset($this->markers['Stop'])) {
             $this->markers['Stop'] = $this->_getMicrotime();
@@ -193,7 +193,7 @@ class Benchmark_Timer extends PEAR
      * @return array
      * @access public
      */
-    function getProfiling() 
+    function getProfiling()
     {
         $i = $total = 0;
 
@@ -250,7 +250,7 @@ class Benchmark_Timer extends PEAR
      * @see    getProfiling()
      * @access public
      */
-    function getOutput($showTotal = false, $format = 'auto') 
+    function getOutput($showTotal = false, $format = 'auto')
     {
         if ($format == 'auto') {
             if (function_exists('version_compare') &&
@@ -359,7 +359,7 @@ class Benchmark_Timer extends PEAR
      * @access public
      * @return void
      */
-    function display($showTotal = false, $format = 'auto') 
+    function display($showTotal = false, $format = 'auto')
     {
         print $this->getOutput($showTotal, $format);
     }
@@ -371,7 +371,7 @@ class Benchmark_Timer extends PEAR
      * @access private
      * @since  1.3.0
      */
-    function _getMicrotime() 
+    function _getMicrotime()
     {
         $microtime = explode(' ', microtime());
         return $microtime[1] . substr($microtime[0], 1);

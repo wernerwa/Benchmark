@@ -1,18 +1,18 @@
 <?php
 /**
- * Iterate.php                                                      
+ * Iterate.php
  *
  * PHP version 4
  *
- * Copyright (c) 2001-2006 Sebastian Bergmann <sb@sebastian-bergmann.de>. 
- * 
- * This source file is subject to the New BSD license, That is bundled    
- * with this package in the file LICENSE, and is available through        
- * the world-wide-web at                                                  
- * http://www.opensource.org/licenses/bsd-license.php                     
- * If you did not receive a copy of the new BSDlicense and are unable     
- * to obtain it through the world-wide-web, please send a note to         
- * license@php.net so we can mail you a copy immediately.                 
+ * Copyright (c) 2001-2006 Sebastian Bergmann <sb@sebastian-bergmann.de>.
+ *
+ * This source file is subject to the New BSD license, That is bundled
+ * with this package in the file LICENSE, and is available through
+ * the world-wide-web at
+ * http://www.opensource.org/licenses/bsd-license.php
+ * If you did not receive a copy of the new BSDlicense and are unable
+ * to obtain it through the world-wide-web, please send a note to
+ * license@php.net so we can mail you a copy immediately.
  *
  * @category  Benchmarking
  * @package   Benchmark
@@ -99,7 +99,7 @@ class Benchmark_Iterate extends Benchmark_Timer
      * @access public
      * @return void
      */
-    function run() 
+    function run()
     {
         $arguments     = func_get_args();
         $iterations    = array_shift($arguments);
@@ -143,7 +143,7 @@ class Benchmark_Iterate extends Benchmark_Timer
      * @return array
      * @access public
      */
-    function get($simple_output = false) 
+    function get($simple_output = false)
     {
         $result = array();
         $total  = 0;
