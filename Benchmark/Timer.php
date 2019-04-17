@@ -253,15 +253,7 @@ class Benchmark_Timer extends PEAR
     function getOutput($showTotal = false, $format = 'auto')
     {
         if ($format == 'auto') {
-            if (function_exists('version_compare') &&
-                version_compare(phpversion(), '4.1', 'ge')) {
-                $format = isset($_SERVER['SERVER_PROTOCOL']) ? 'html' : 'plain';
-            } else {
-                global $HTTP_SERVER_VARS;
-                $use_html = isset($HTTP_SERVER_VARS['SERVER_PROTOCOL']);
-
-                $format = $use_html ? 'html' : 'plain';
-            }
+            $format = isset($_SERVER['SERVER_PROTOCOL']) ? 'html' : 'plain';
         }
 
         $total  = $this->TimeElapsed();
