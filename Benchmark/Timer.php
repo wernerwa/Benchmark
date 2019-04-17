@@ -243,7 +243,7 @@ class Benchmark_Timer extends PEAR
     /**
      * Return formatted profiling information.
      *
-     * @param boolean $showTotal Optionnaly includes total in output, default no
+     * @param boolean $showTotal Optionally includes total in output, default no
      * @param string  $format    output format (auto, plain or html), default auto
      *
      * @return string
