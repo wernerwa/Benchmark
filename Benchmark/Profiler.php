@@ -147,7 +147,7 @@ class Benchmark_Profiler extends PEAR
      *
      * @access public
      */
-    function Benchmark_Profiler($auto = false)
+    public function __construct($auto = false)
     {
         $this->_auto = $auto;
 

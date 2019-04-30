@@ -89,10 +89,8 @@ class Benchmark_Timer extends PEAR
      * Constructor.
      *
      * @param boolean $auto Automatically start timer
-     *
-     * @access public
      */
-    function Benchmark_Timer($auto = false)
+    public function __construct($auto = false)
     {
         $this->auto = $auto;
 
