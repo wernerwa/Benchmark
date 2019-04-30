@@ -88,65 +88,57 @@ class Benchmark_Profiler extends PEAR
      * Contains the total ex. time of each section
      *
      * @var    array
-     * @access private
      */
-    var $_sections = array();
+    private $_sections = array();
 
     /**
      * Calling stack
      *
      * @var    array
-     * @access private
      */
-    var $_stack = array();
+    private $_stack = array();
 
     /**
      * Notes how often a section was entered
      *
      * @var    array
-     * @access private
      */
-    var $_numberOfCalls = array();
+    private $_numberOfCalls = array();
 
     /**
      * Notes for each section how much time is spend in sub-sections
      *
      * @var    array
-     * @access private
      */
-    var $_subSectionsTime = array();
+    private $_subSectionsTime = array();
 
     /**
      * Notes for each section how often it calls which section
      *
      * @var    array
-     * @access private
      */
-    var $_calls = array();
+    private $_calls = array();
 
     /**
      * Notes for each section how often it was called by which section
      *
      * @var    array
-     * @access private
      */
-    var $_callers = array();
+    private $_callers = array();
 
     /**
      * Auto-starts and stops profiler
      *
      * @var    boolean
-     * @access private
      */
-    var $_auto = false;
+    private $_auto = false;
 
     /**
      * Max marker name length for non-html output
      *
      * @var    integer
-     * @access private
      */
-    var $_maxStringLength = 0;
+    private $_maxStringLength = 0;
 
     /**
      * Constructor, starts profiling recording
@@ -169,10 +161,9 @@ class Benchmark_Profiler extends PEAR
     /**
      * Close method, stop profiling recording and display output.
      *
-     * @access public
      * @return void
      */
-    function close()
+    public function close()
     {
         if (isset($this->_auto) && $this->_auto) {
             $this->stop();
@@ -186,9 +177,8 @@ class Benchmark_Profiler extends PEAR
      * @param string $section Section to retrieve
      *
      * @return array
-     * @access public
      */
-    function getSectionInformations($section = 'Global')
+    public function getSectionInformations($section = 'Global')
     {
         if (isset($this->_sections[$section])) {
             $calls = array();
@@ -237,10 +227,9 @@ class Benchmark_Profiler extends PEAR
     /**
      * Returns profiling informations for all sections.
      *
-     * @access public
      * @return array
      */
-    function getAllSectionsInformations()
+    public function getAllSectionsInformations()
     {
         $informations = array();
 
@@ -257,10 +246,9 @@ class Benchmark_Profiler extends PEAR
      * @param string $format output format (auto, plain or html), default auto
      *
      * @see    display()
-     * @access private
      * @return string
      */
-    function _getOutput($format)
+    private function _getOutput($format)
     {
 
         /* Quickly find out the maximun length: Ineffecient, but will do for now! */
@@ -361,10 +349,9 @@ class Benchmark_Profiler extends PEAR
      *
      * @param string $format output format (auto, plain or html), default auto
      *
-     * @access public
      * @return void
      */
-    function display($format = 'auto')
+    public function display($format = 'auto')
     {
         echo $this->_getOutput($format);
     }
@@ -373,10 +360,9 @@ class Benchmark_Profiler extends PEAR
      * Enters "Global" section.
      *
      * @see    enterSection(), stop()
-     * @access public
      * @return void
      */
-    function start()
+    public function start()
     {
         $this->enterSection('Global');
     }
@@ -385,10 +371,9 @@ class Benchmark_Profiler extends PEAR
      * Leaves "Global" section.
      *
      * @see    leaveSection(), start()
-     * @access public
      * @return void
      */
-    function stop()
+    public function stop()
     {
         $this->leaveSection('Global');
     }
@@ -399,10 +384,9 @@ class Benchmark_Profiler extends PEAR
      * @param string $name The code section
      *
      * @see    start(), leaveSection()
-     * @access public
      * @return void
      */
-    function enterSection($name)
+    public function enterSection($name)
     {
         if (count($this->_stack)) {
             $item = end($this->_stack);
@@ -443,10 +427,9 @@ class Benchmark_Profiler extends PEAR
      * @param string $name The marker to be set
      *
      * @see    stop(), enterSection()
-     * @access public
      * @return void
      */
-    function leaveSection($name)
+    public function leaveSection($name)
     {
         $microtime = $this->_getMicrotime();
 
@@ -489,10 +472,9 @@ class Benchmark_Profiler extends PEAR
      * Wrapper for microtime().
      *
      * @return float
-     * @access private
      * @since  1.3.0
      */
-    function _getMicrotime()
+    private function _getMicrotime()
     {
         $microtime = explode(' ', microtime());
         return $microtime[1] . substr($microtime[0], 1);

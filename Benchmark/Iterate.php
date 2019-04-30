@@ -96,10 +96,9 @@ class Benchmark_Iterate extends Benchmark_Timer
     /**
      * Benchmarks a function or method.
      *
-     * @access public
      * @return void
      */
-    function run()
+    public function run()
     {
         $arguments     = func_get_args();
         $iterations    = array_shift($arguments);
@@ -141,9 +140,8 @@ class Benchmark_Iterate extends Benchmark_Timer
      * @param bool $simple_output Show just the total
      *
      * @return array
-     * @access public
      */
-    function get($simple_output = false)
+    public function get($simple_output = false)
     {
         $result = array();
         $total  = 0;

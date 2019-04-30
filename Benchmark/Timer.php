@@ -68,25 +68,22 @@ class Benchmark_Timer extends PEAR
      * Contains the markers.
      *
      * @var    array
-     * @access private
      */
-    var $markers = array();
+    private $markers = array();
 
     /**
      * Auto-start and stop timer.
      *
      * @var    boolean
-     * @access private
      */
-    var $auto = false;
+    private $auto = false;
 
     /**
      * Max marker name length for non-html output.
      *
      * @var    integer
-     * @access private
      */
-    var $maxStringLength = 0;
+    private $maxStringLength = 0;
 
     /**
      * Constructor.
@@ -109,10 +106,9 @@ class Benchmark_Timer extends PEAR
     /**
      * Close method. Stop timer and display output.
      *
-     * @access public
      * @return void
      */
-    function close()
+    public function close()
     {
         if ($this->auto) {
             $this->stop();
@@ -124,10 +120,9 @@ class Benchmark_Timer extends PEAR
      * Set "Start" marker.
      *
      * @see    setMarker(), stop()
-     * @access public
      * @return void
      */
-    function start()
+    public function start()
     {
         $this->setMarker('Start');
     }
@@ -136,10 +131,9 @@ class Benchmark_Timer extends PEAR
      * Set "Stop" marker.
      *
      * @see    setMarker(), start()
-     * @access public
      * @return void
      */
-    function stop()
+    public function stop()
     {
         $this->setMarker('Stop');
     }
@@ -150,10 +144,9 @@ class Benchmark_Timer extends PEAR
      * @param string $name Name of the marker to be set.
      *
      * @see    start(), stop()
-     * @access public
      * @return void
      */
-    function setMarker($name)
+    public function setMarker($name)
     {
         $this->markers[$name] = $this->_getMicrotime();
     }
@@ -165,9 +158,8 @@ class Benchmark_Timer extends PEAR
      * @param string $end   end marker, defaults to "Stop"
      *
      * @return double  $time_elapsed time elapsed between $start and $end
-     * @access public
      */
-    function timeElapsed($start = 'Start', $end = 'Stop')
+    public function timeElapsed($start = 'Start', $end = 'Stop')
     {
         if ($end == 'Stop' && !isset($this->markers['Stop'])) {
             $this->markers['Stop'] = $this->_getMicrotime();
@@ -191,9 +183,8 @@ class Benchmark_Timer extends PEAR
      * $profiling[x]['total'] = total execution time up to marker x
      *
      * @return array
-     * @access public
      */
-    function getProfiling()
+    public function getProfiling()
     {
         $i = $total = 0;
 
@@ -248,9 +239,8 @@ class Benchmark_Timer extends PEAR
      *
      * @return string
      * @see    getProfiling()
-     * @access public
      */
-    function getOutput($showTotal = false, $format = 'auto')
+    public function getOutput($showTotal = false, $format = 'auto')
     {
         if ($format == 'auto') {
             $format = isset($_SERVER['SERVER_PROTOCOL']) ? 'html' : 'plain';
@@ -348,10 +338,9 @@ class Benchmark_Timer extends PEAR
      * @param string  $format    output format (auto, plain or html), default auto
      *
      * @see    getOutput()
-     * @access public
      * @return void
      */
-    function display($showTotal = false, $format = 'auto')
+    public function display($showTotal = false, $format = 'auto')
     {
         print $this->getOutput($showTotal, $format);
     }
