@@ -397,7 +397,7 @@ class Benchmark_Profiler extends PEAR
                 $this->_callers[$name][$item["name"]] = 1;
             }
 
-            if (isset($this->_calls[$item][$name])) {
+            if (isset($this->_calls[$item["name"]][$name])) {
                 $this->_calls[$item["name"]][$name]++;
             } else {
                 $this->_calls[$item["name"]][$name] = 1;
